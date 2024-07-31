@@ -1,0 +1,208 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.input-group {
+  position: relative;
+}
+
+.eye-wrap {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 0;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+}
+
+.cssload-speeding-wheel {
+    /* Your preloader styles */
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    position: relative;
+}
+
+.white-box {
+    padding: 0; /* Already included in .login-box */
+}
+
+.box-title {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-addon {
+    background: #f6f8fa;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #333;
+    border-right: 1px solid #e1e4e8;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    padding: 12px;
+    font-size: 1.1rem;
+    box-shadow: none;
+    flex: 1;
+    font-size: 20px;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.btn-info {
+    background-color: #2d333b;
+    border-color: #2d333b;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #1b1f22;
+    border-color: #1b1f22;
+    cursor: pointer;
+}
+
+.checkbox-primary {
+    margin: 0;
+}
+
+.checkbox-primary label {
+    margin-left: 5px;
+    font-size: 1rem;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.alert {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fdd;
+    color: #d8000c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert .close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #d8000c;
+}
+
+
+.reg-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the space between elements as needed */
+}
+
+.reg-cont p, .reg-cont a {
+  margin: 0;
+}
+
+
+.icon-border {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 50%;
+  color: blue;
+  font-size: 24px;
+  background-color: white;
+}
