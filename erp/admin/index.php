@@ -171,7 +171,11 @@ include_once 'header.php'; ?>
             </div>
         </div> -->
         <style>
+            .container{
+                margin-top: 100px;
+            }
             .card {
+                /* margin-top: 50px; */
                 border: none;
                 border-radius: 10px; /* Adjust to 4px if preferred */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow */
@@ -191,7 +195,7 @@ include_once 'header.php'; ?>
 
             /* Card Icon */
             .card-icon {
-                background-color: #fff;
+                background-color: #EDF1F5;
                 border-radius: 50%;
                 width: 60px;
                 height: 60px;
@@ -218,19 +222,23 @@ include_once 'header.php'; ?>
 
             /* Specific Card Styles */
             .card-reseller {
-                background-color: #feb207;
+                /* feb207 */
+                background-color: #ffffff;
             }
 
             .card-users {
-                background-color: #F97D4D;
+                background-color: #ffffff;
+                /* F97D4D */
             }
 
             .card-campaign {
-                background-color: #20b2aa;
+                background-color: #ffffff;
+                /* 20b2aa */
             }
 
             .card-todays {
-                background-color: #4682b4;
+                background-color: #ffffff;
+                /* 4682b4 */
             }
 
             /* Responsive Adjustments */

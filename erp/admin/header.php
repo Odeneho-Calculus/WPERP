@@ -61,7 +61,7 @@ $conn->close();
 <div id="wrapper">
     <!-- Top Navigation -->
     <nav class="navbar navbar-default navbar-static-top m-b-0">
-        <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+        <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg" href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
             <div class="top-left-part"><a class="logo" href="index.php"><span class="hidden-xs"><strong>WP ERP </strong></span></a>
             </div>
             <ul class="nav navbar-top-links navbar-left hidden-xs">
@@ -91,6 +91,35 @@ $conn->close();
     </nav>
     <!-- End Top Navigation -->
     <!-- Left navbar-header -->
+     <style>
+        .sidebar{
+            background-color: #f97d4d;
+            color: #fff; 
+        }
+        .sidebar-nav {
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        }
+    
+
+        .sidebar-nav li {
+            margin-bottom: 15px; /* Space between items */
+        }
+
+    .sidebar-nav li a {
+        display: flex; /* Align icon and text */
+        align-items: center; /* Vertically align content */
+        color: #fff !important; 
+        text-decoration: none; /* Remove underline from links */
+        transition: background-color 0.3s ease, color 0.3s ease; 
+    }
+
+    .sidebar-nav li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffe0b3; 
+    }
+
+     </style>
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse slimscrollsidebar">
             <ul class="nav" id="side-menu">
