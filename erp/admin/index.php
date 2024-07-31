@@ -130,7 +130,7 @@ include_once 'header.php'; ?>
         $conn3->close();
 
         ?>
-        <div class="row">
+        <!-- <div class="row">
 
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
                     <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
@@ -138,7 +138,6 @@ include_once 'header.php'; ?>
                         <div class="text-left">
                             <a href="reseller.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
                                             src="../plugins/images/icon/25.png" width="50px;" height="50px;"  alt="reseller_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_reseller_id)? 0 : $total_reseller_id); ?></h1></a>
-                            <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
                         </div>
                     </div>
                 </div>
@@ -148,7 +147,6 @@ include_once 'header.php'; ?>
                         <div class="text-left">
                             <a href="user.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
                                             src="../plugins/images/icon/26.png" width="50px;" height="50px;"  alt="user_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_user_id)? 0 : $total_user_id); ?></h1></a>
-                            <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
                         </div>
                     </div>
                 </div>
@@ -159,33 +157,157 @@ include_once 'header.php'; ?>
                     <div class="text-left">
                         <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
                                         src="../plugins/images/icon/28.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_campaign)? 0 : $total_campaign); ?></h1></a>
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
                     </div>
                 </div>
             </div>
-            <!--<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #02c2cb;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Credit</h3>
-                    <div class="text-left">
-                        <h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                    src="../plugins/images/icon/15.png" width="40px;" height="50px;"  alt="campaign_img">&emsp;<?php echo (empty($credit)? 0 : $credit); ?></h1>-->
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
-                  <!--  </div>
-                </div>
-            </div>-->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
                 <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
                     <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total No. (Today's)</h3>
                     <div class="text-left">
                         <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
                                         src="../plugins/images/icon/33.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($today_total_mob_all_cam)? 0 : $today_total_mob_all_cam); ?></h1></a>
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
                     </div>
                 </div>
+            </div>
+        </div> -->
+        <style>
+            .card {
+                border: none;
+                border-radius: 10px; /* Adjust to 4px if preferred */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+                transition: transform 0.3s, box-shadow 0.3s;
+                height: 100%;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+            }
+
+            /* Card Body */
+            .card-body {
+                padding: 20px;
+            }
+
+            /* Card Icon */
+            .card-icon {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Icon shadow for depth */
+            }
+
+            /* Card Titles and Values */
+            .card-title {
+                font-size: 18px;
+                font-weight: bold;
+                color: #333; /* Use #fff for light backgrounds */
+            }
+
+            .card-value {
+                font-size: 28px;
+                font-weight: bold;
+                color: #444; /* Use #fff for light backgrounds */
+                text-decoration: none;
+            }
+
+            /* Specific Card Styles */
+            .card-reseller {
+                background-color: #feb207;
+            }
+
+            .card-users {
+                background-color: #F97D4D;
+            }
+
+            .card-campaign {
+                background-color: #20b2aa;
+            }
+
+            .card-todays {
+                background-color: #4682b4;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+                .card-title {
+                    font-size: 16px;
+                }
+
+                .card-value {
+                    font-size: 20px;
+                }
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
+                    <div class="card card-reseller h-100">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/25.png" alt="Reseller Icon" width="30">
+                            </div>
+                            <h3 class="card-title">Total Reseller</h3>
+                            <div class="text-left">
+                                <a href="reseller.php" class="card-value"><?php echo (empty($total_reseller_id) ? 0 : $total_reseller_id); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
+                    <div class="card card-users h-100">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/26.png" alt="User Icon" width="30">
+                            </div>
+                            <h3 class="card-title">Total Users</h3>
+                            <div class="text-left">
+                                <a href="user.php" class="card-value"><?php echo (empty($total_user_id) ? 0 : $total_user_id); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
+                    <div class="card card-campaign h-100">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/28.png" alt="Campaign Icon" width="30">
+                            </div>
+                            <h3 class="card-title">Total Campaign</h3>
+                            <div class="text-left">
+                                <a href="deliveryapp.php" class="card-value"><?php echo (empty($total_campaign) ? 0 : $total_campaign); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
+                    <div class="card card-todays h-100">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/33.png" alt="Today's Total Icon" width="30">
+                            </div>
+                            <h3 class="card-title">Total No. (Today's)</h3>
+                            <div class="text-left">
+                                <a href="deliveryapp.php" class="card-value"><?php echo (empty($today_total_mob_all_cam) ? 0 : $today_total_mob_all_cam); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
     </div>
     <!-- /.container-fluid -->
 </div>
+<!-- <link href="css/styles.css" rel="stylesheet"> -->
 <?php include_once 'footer.php'; ?>

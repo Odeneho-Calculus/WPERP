@@ -1,7 +1,9 @@
 <?php
 $servername = "localhost";
 $dbname = "submission";
-$username = "submission";
-$password = "Devendra1234#";
+// $username = "submission";
+$username = "root";
+$password = "";
+// $password = "Devendra1234#";
 
 
