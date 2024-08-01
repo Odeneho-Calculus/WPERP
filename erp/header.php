@@ -104,7 +104,44 @@ $conn->close();
     </nav>
     <!-- End Top Navigation -->
     <!-- Left navbar-header -->
-    <div style="background-color:black" class="navbar-default sidebar" role="navigation">
+     <style>
+        .sidebar{
+            background-color: #f97d4d;
+            color: #fff; 
+            overflow: hidden;
+            /* width: 22%; */
+            border-right: 1px solid #000000;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+            /* padding: 0 5px; */
+        }
+        .sidebar-nav {
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        overflow: hidden;
+        }
+    
+
+        .sidebar-nav li {
+            margin-bottom: 15px; /* Space between items */
+            overflow: hidden;
+        }
+
+    .sidebar-nav li a {
+        display: flex; /* Align icon and text */
+        align-items: center; /* Vertically align content */
+        color: #fff !important; 
+        text-decoration: none; /* Remove underline from links */
+        transition: background-color 0.3s ease, color 0.3s ease; 
+        overflow: hidden;
+    }
+
+    .sidebar-nav li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffe0b3; 
+    }
+
+     </style>
+    <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse slimscrollsidebar">
             <ul class="nav" id="side-menu">
                 <br/>

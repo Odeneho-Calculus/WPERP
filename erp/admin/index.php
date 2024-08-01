@@ -135,7 +135,6 @@ include_once 'header.php'; ?>
                 margin-top: 100px;
             }
             .card {
-                /* margin-top: 50px; */
                 border: none;
                 border-radius: 10px; /* Adjust to 4px if preferred */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow */

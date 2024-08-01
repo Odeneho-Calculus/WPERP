@@ -141,73 +141,164 @@ include_once 'header.php'; ?>
         $conn4->close();
 
        ?>
-        <div class="row">
-        <?php if($user_type == 'reseller') { ?>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Reseller</h3>
-                    <div class="text-left">
-                        <a href="reseller.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/25.png" width="50px;" height="50px;"  alt="reseller_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_reseller_id)? 0 : $total_reseller_id); ?></h1></a>
-<!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #59adf1;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Users</h3>
-                    <div class="text-left">
-                        <a href="user.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/26.png" width="50px;" height="50px;"  alt="user_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_user_id)? 0 : $total_user_id); ?></h1></a>
-<!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
-                    </div>
-                </div>
-            </div>
-            <?php } ?>
+       <style>
+        .container{
+                margin-top: 100px;
+                margin-left:50px;
+                margin-right: 50px;
+            }
+       
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-image: linear-gradient(rgb(34, 200, 197),rgb(0, 0, 0));border-radius:9px;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Credit</h3>
-                    <div class="text-left">
-                        <h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/37.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($credit)? 0 : $credit); ?></h1>
-<!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Card Icon */
+.card-icon {
+    background-color: #EDF1F5;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Titles and Values */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+}
+
+/* Specific Card Styles */
+.card-credit {
+    border-top: 4px solid #22C8C5; /* Teal top border */
+}
+
+.card-campaign {
+    border-top: 4px solid #20B2AA; /* Light sea green top border */
+}
+
+.card-todays {
+    border-top: 4px solid #4682B4; /* Steel blue top border */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-value {
+        font-size: 20px;
+    }
+}
+ 
+       </style>
+       
+       
+        <div class="row container">
+            <?php if($user_type == 'reseller') { ?>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
+                    <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
+                        <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Reseller</h3>
+                        <div class="text-left">
+                            <a href="reseller.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
+                                            src="../plugins/images/icon/25.png" width="50px;" height="50px;"  alt="reseller_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_reseller_id)? 0 : $total_reseller_id); ?></h1></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-image: linear-gradient(rgb(34, 200, 197),rgb(0, 0, 0));border-radius:9px;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Campaign</h3>
-                    <div class="text-left">
-                        <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/28.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_campaign)? 0 : $total_campaign); ?></h1></a>
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
+                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
+                    <div class="white-box" style="background-color: #59adf1;color: white; padding:16px; !important;">
+                        <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Users</h3>
+                        <div class="text-left">
+                            <a href="user.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
+                                            src="../plugins/images/icon/26.png" width="50px;" height="50px;"  alt="user_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_user_id)? 0 : $total_user_id); ?></h1></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-image: linear-gradient(rgb(34, 200, 197),rgb(0, 0, 0));border-radius:9px;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total No. (Today's)</h3>
-                    <div class="text-left">
-                        <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/33.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($today_total_mob_all_cam)? 0 : $today_total_mob_all_cam); ?></h1></a>
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
+                <?php } ?>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card card-credit">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/37.png" width="50px" height="50px" alt="credit_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                            </div>
+                            <h3 class="card-title">Total Credit</h3>
+                            <div class="card-value">
+                                <?php echo (empty($credit) ? 0 : $credit); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php if($rollback == 'Enable'){ ?>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Rollback</h3>
-                    <div class="text-left">
-                        <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><i class="fa fa-refresh"></i>&emsp;<?php echo $rollback; ?></h1></a>
-                        <!--                        <span class="" ><a href="add-blog.php#blog" style="font-size: 14px;color: white;"> VIEW All LIST</a></span>-->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card card-campaign">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/28.png" width="50px" height="50px" alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                            </div>
+                            <h3 class="card-title">Total Campaign</h3>
+                            <a href="deliveryapp.php" class="card-value">
+                                <?php echo (empty($total_campaign) ? 0 : $total_campaign); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php } ?>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card card-todays">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="../plugins/images/icon/33.png" width="50px" height="50px" alt="today_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                            </div>
+                            <h3 class="card-title">Total No. (Today's)</h3>
+                            <a href="deliveryapp.php" class="card-value">
+                                <?php echo (empty($today_total_mob_all_cam) ? 0 : $today_total_mob_all_cam); ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php if($rollback == 'Enable'){ ?>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
+                    <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
+                        <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Rollback</h3>
+                        <div class="text-left">
+                            <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><i class="fa fa-refresh"></i>&emsp;<?php echo $rollback; ?></h1></a>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div style="border: 1px solid rgb(0, 150, 145);border-radius:10px
              ;" class="col-sm-12">
                 <div class="white-box" id="imge-popups">
@@ -217,8 +308,7 @@ include_once 'header.php'; ?>
                             <tr border="2">
                                 <th>Sr. No.</th>
                                 <th>Unique Id</th>
-                                <!--                                <th>Campaign Name</th>-->
-                                <!--th>Message</th-->
+                         
                                 <th>Total Mob No.</th>
                                 <th>Created At</th>
                                 <th>Created By</th>
@@ -259,8 +349,7 @@ include_once 'header.php'; ?>
                                         <td>
                                             <?php echo $inc; ?></td>
                                         <td><?php echo $campaign_unique_id; ?></td>
-                                        <!--                                        <td><b>--><?php //echo stripcslashes($campaign_name); ?><!--</b></td>-->
-                                        <!--td><?php /* echo stripcslashes($message); */ ?></td-->
+                                        
                                         <td><?php echo stripcslashes($number_count); ?></td>
                                         <td><?php echo date_format(date_create($created_at), "d-m-Y H:i"); ?></td>
                                         <td><?php echo $login_created_by; ?></td>
@@ -275,29 +364,11 @@ include_once 'header.php'; ?>
                             </tbody>
                         </table>
                     </div>
-                    <!--                    <input type="hidden" value="" name="startdate">-->
-                    <!--                    <input type="hidden" value="" name="enddate">-->
                     <button type="button" class="btn btn-warning pull-right download-excel" value="Download Excel" style="background-image: linear-gradient(rgb(255, 0, 234),rgb(109, 0, 168));border-radius:5px">
                         <i style="background-image: linear-gradient(rgb(255, 0, 234),rgb(109, 0, 168))" class="fa fa-download"></i> Download
                     </button>
 
                     <br/>
-                    <!--                    <form action="process-change-status.php" method="post">-->
-                    <!--                        <div class="col-sm-5 offset-sm-3">-->
-                    <!--                            <Select class="form-control" name="change-status" required>-->
-                    <!--                                <option value="" selected disabled>---Change Status----</option>-->
-                    <!--                                <option value="pending">Pending</option>-->
-                    <!--                                <option value="process">Process</option>-->
-                    <!--                                <option value="delivered">Delivered</option>-->
-                    <!--                                <option value="discard">Discard</option>-->
-                    <!--                            </Select>-->
-                    <!--                            <br/>-->
-                    <!--                            <button type="submit" name="submit-status" class="btn btn-success pull-right" value="">-->
-                    <!--                                Submit-->
-                    <!--                            </button>-->
-                    <!--                            <br>-->
-                    <!---->
-                    <!--                        </div>-->
                     <h3 class="box-title m-b-0" id="fame">LIST OF all Campaign Wise</h3>
                     <div id="loader_div" class="text-center">
                         <img id="loader">
@@ -313,11 +384,9 @@ include_once 'header.php'; ?>
                             <thead>
                             <tr>
                                 <th>Sr. No.</th>
-                                <!--                                <th>Estimate Time</th>-->
-                                <!--                                    <th>Update Status</th>-->
+                      
                                 <th>Unique Id</th>
-                                <!--                                <th>Caption</th>-->
-                                <!--th>Message</th-->
+                               
                                 <th>Total Mob No.</th>
                                 <th>Created By</th>
                                 <th>Created User Type</th>
@@ -359,16 +428,9 @@ include_once 'header.php'; ?>
                                     <tr>
                                         <td>
                                             <?php echo $inc; ?></td>
-                                        <!--                                        <td><b><p id="t--><?php //echo $inc; ?><!--"> 0h 0m 0s </p></b></td>-->
-                                        <!--                                            <td><input type="radio" name="campaign_id" id="campaign_id"-->
-                                        <!--                                                       class="form-control campaign_id"-->
-                                        <!--                                                       value="--><?php //echo $campaign_id; ?><!--"-->
-                                        <!--                                                       style="width:23px;cursor:pointer;" required>-->
-                                        <!--                                            </td>-->
+                                       
                                         <td><?php echo $campaign_unique_id; ?></td>
-                                        <!--                                        <td><b>--><?php //echo stripcslashes($campaign_name); ?><!--</b></td>-->
-                                        <!--td style="word-wrap: break-word;max-width: 250px;"><?php /* echo stripcslashes($message); */ ?></td-->
-                                        <td><?php echo stripcslashes($number_count); ?></td>
+                                       <td><?php echo stripcslashes($number_count); ?></td>
 
                                         <td><?php echo $login_created_by; ?></td>
                                         <td><?php echo $login_user_type; ?></td>
@@ -382,14 +444,10 @@ include_once 'header.php'; ?>
                                         </td>
                                         <td><?php echo date_format(date_create($created_at), "d-m-Y H:i"); ?></td>
                                         <td>
-                                            <!--                                            <a href='deliveryapp1.php?action=view&unique_id=--><?php //echo $campaign_unique_id; ?><!--'-->
-                                            <!--                                               class='btn btn-circle btn-info btn-sm'-->
-                                            <!--                                               title='View Details'><i-->
-                                            <!--                                                        class='fa fa-eye'></i></a>-->
                                             <a style="background-image: linear-gradient(rgb(255, 0, 234),rgb(109, 0, 168))" href='export-report.php?unique_id=<?php echo $campaign_unique_id; ?>&username=<?php echo $login_created_by; ?>'
                                                class='btn btn-circle btn-warning btn-sm'
                                                title='Download Excel' id="dl" ><i
-                                                        class='fa fa-download'></i></a>
+                                                class='fa fa-download'></i></a>
                                         </td>
                                     </tr>
                                     <?php $inc++;
@@ -402,13 +460,12 @@ include_once 'header.php'; ?>
                         </table>
                     </div>
 
-                    <!--                    </form>-->
                     
                     
                     
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div style="height:60px;width:100%;background-image:linear-gradient(green,black,green);position:absolute;top:39pc;">
         <h1 style="color:white;margin-left:34%;font-family: 'Josefin Sans', sans-serif;">OUR PREMIUM CUSTOMERS</h1>
