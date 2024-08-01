@@ -114,8 +114,8 @@ $conn->close();
             background-color: #f97d4d;
             color: #fff; 
             overflow: hidden;
-            width: 22%;
-            border-right: 3px solid #000000;
+            /* width: 22%; */
+            border-right: 1px solid #000000;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
             padding: 0 10px;
         }

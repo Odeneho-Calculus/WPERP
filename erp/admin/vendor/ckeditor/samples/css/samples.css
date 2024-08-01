@@ -732,7 +732,7 @@ body input.navigation-b ul li a:hover:hover {
   -moz-background-clip: padding;
   border-radius: 3px;
   background-clip: padding-box;
-  border-bottom: 3px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
   background: #ebebeb;
   display: inline-block;
   white-space: nowrap;
