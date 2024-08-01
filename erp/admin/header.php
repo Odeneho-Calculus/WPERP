@@ -8,6 +8,9 @@
 <!--    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">-->
 <!--    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
     <title>WP ERP - Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
@@ -58,32 +61,47 @@ $stmt->bind_result($u_username, $profile_pic, $credit);
 $stmt->fetch();
 $conn->close();
 ?>
+
+<style>
+    .profile-image {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .wperp{
+        font-size: 20px; 
+        font-weight: bolder; 
+        font-family: 'Arial Black', 'Arial', sans-serif;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+        color: linear-gradient(to right, #e0e0e0, white);
+
+    }
+</style>
+
+
 <div id="wrapper">
     <!-- Top Navigation -->
     <nav class="navbar navbar-default navbar-static-top m-b-0">
-        <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg" href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-            <div class="top-left-part"><a class="logo" href="index.php"><span class="hidden-xs"><strong>WP ERP </strong></span></a>
-            </div>
-            <ul class="nav navbar-top-links navbar-left hidden-xs">
-                <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"> ADMIN PANEL </a></li>
-            </ul>
-<!--            <ul class="nav navbar-top-links navbar-right pull-right">-->
-                <!--<li><a href="login.html"><i class="ti-settings"></i> Settings</a></li>-->
-<!--                <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>-->
-<!--            </ul>-->
+       <div class="navbar-header"> 
+    <a class="navbar-toggle hidden-sm hidden-md hidden-lg" href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+    <ul class="nav navbar-top-links navbar-left hidden-xs">
+        <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"><span class="wperp">WP ERP ADMIN PANEL</span></a></li>
+    </ul>
 
-                <button class ="btn dropdown-toggle pull-right profile" type = "button" data-toggle="dropdown">
-                    <?php if (!empty($profile_pic)){ ?>
-                    <img src="img/upload/<?php echo $profile_pic; ?>"  width="40px;" height="40px;" alt="user_image">
-                    <?php } else { ?>
-                        <img src="img/upload/user.png"  width="40px;" height="40px;" alt="user_image">
-                   <?php } ?><?php echo !empty($u_username)? $u_username : ""; ?> <i class="ti-angle-down p-2"></i><span class = "caret"></span></button>
-                <ul class = "dropdown-menu dropdown-menu-right profile-wth">
-                    <li><a href = "login-profile.php"><img src="../plugins/images/icon/34.png" width="30px;" height="30px;" alt="profile_img"> Profile</a></li>
-                    <li><a href = "change-password.php"><img src="../plugins/images/icon/36.png" width="30px;" height="30px;" alt="password_img"> Change Password</a></li>
-                    <li><a href="logout.php"><img src="../plugins/images/icon/38.png" width="30px;" height="30px;" alt="logout_img"> Logout</a></li>
-                </ul>
-        </div>
+    <button class="btn dropdown-toggle pull-right profile" type="button" data-toggle="dropdown" style="font-size: 20px;">
+        <?php if (!empty($profile_pic)){ ?>
+            <img class="profile-image" src="img/upload/<?php echo $profile_pic; ?>" width="40px" height="40px" alt="user_image">
+        <?php } else { ?>
+            <img class="profile-image" src="img/upload/user.png" width="40px" height="40px" alt="user_image">
+        <?php } ?>
+        <?php echo !empty($u_username) ? $u_username : ""; ?> 
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right profile-wth">
+        <li><a href="login-profile.php"><img src="../plugins/images/icon/34.png" width="30px" height="30px" alt="profile_img"> Profile</a></li>
+        <li><a href="change-password.php"><img src="../plugins/images/icon/36.png" width="30px" height="30px" alt="password_img"> Change Password</a></li>
+        <li><a href="logout.php"><img src="../plugins/images/icon/38.png" width="30px" height="30px" alt="logout_img"> Logout</a></li>
+    </ul>
+</div>
+
 
         <!-- /.navbar-header -->
         <!-- /.navbar-top-links -->
@@ -95,15 +113,22 @@ $conn->close();
         .sidebar{
             background-color: #f97d4d;
             color: #fff; 
+            overflow: hidden;
+            width: 22%;
+            border-right: 3px solid #000000;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+            padding: 0 10px;
         }
         .sidebar-nav {
         list-style: none; /* Remove bullet points */
         padding: 0; /* Remove default padding */
+        overflow: hidden;
         }
     
 
         .sidebar-nav li {
             margin-bottom: 15px; /* Space between items */
+            overflow: hidden;
         }
 
     .sidebar-nav li a {
@@ -112,6 +137,7 @@ $conn->close();
         color: #fff !important; 
         text-decoration: none; /* Remove underline from links */
         transition: background-color 0.3s ease, color 0.3s ease; 
+        overflow: hidden;
     }
 
     .sidebar-nav li a:hover {
@@ -123,17 +149,17 @@ $conn->close();
 
      </style>
     <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+        <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <br/>
                 <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
                 <li> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu"> Dashboard</span></a> </li>
 
 
-                  <!--<li> <a href="add-gallery.php" class="waves-effect"><i class="ti-plus p-r-10"></i> <span class="hide-menu">Add Gallery</span></a> </li>-->
+                  
                 <li> <a href="sendwhatsapp.php" class="waves-effect"><img src="../plugins/images/icon/21.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu"> Send Whatsapp SMS</span></a> </li>
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/23.png" width=40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/23.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="deliveryapp.php"><img src="../plugins/images/icon/28.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
                         <li><a href="search-mobile-no.php"><img src="../plugins/images/icon/33.png" width="40px;" height="40px;" alt="mobile_img"> Search Mobile No.</a></li>
@@ -149,8 +175,6 @@ $conn->close();
                 </li>
                 <li> <a href="reseller.php" class="waves-effect"><img src="../plugins/images/icon/25.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
                 <li> <a href="user.php" class="waves-effect"><img src="../plugins/images/icon/26.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
-
-<!--                <li> <a href="filter.php" class="waves-effect"><img src="../plugins/images/icon/22.png" width="30px;" height="30px;" alt="filter_wp_img"><span class="hide-menu">Filter Whatsapp No.</span></a> </li>-->
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/27.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
@@ -160,10 +184,13 @@ $conn->close();
                     </ul>
                 </li>
                 <li> <a href="news.php" class="waves-effect"><img src="../plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
-                <li> <a href="client-tree-view.php" class="waves-effect"><img src="../plugins/images/icon/31.png" width=30px;" height="30px;" alt="tree_img"> <span class="hide-menu"> Tree View</span></a> </li>
-<!--                <li> <a href="search-mobile-no.php" class="waves-effect"><img src="../plugins/images/icon/19.png" width=30px;" height="30px;" alt=""> <span class="hide-menu"> Search Mobile No.</span></a> </li>-->
-                <li> <a href="contact.php" class="waves-effect"><img src="../plugins/images/icon/32.png" width=30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
+                <li> <a href="client-tree-view.php" class="waves-effect"><img src="../plugins/images/icon/31.png" width="30px;" height="30px;" alt="tree_img"> <span class="hide-menu"> Tree View</span></a> </li>
+                <li> <a href="contact.php" class="waves-effect"><img src="../plugins/images/icon/32.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
             </ul>
         </div>
     </div>
     <!-- Left navbar-header end -->
+
+</body>
+
+</html>
