@@ -1,23 +1,30 @@
 <?php
 session_start();
-if(isset($_SESSION['login_status'])){
-    if(($_SESSION['login_status'] != 1)){
-        header("Location: process_login.php");
-        exit();
-    }
-}
-if(!isset($_SESSION['login_status'])){
-    $_SESSION['login_status']=0;
+
+// Check login status
+if (!isset($_SESSION['login_status']) || $_SESSION['login_status'] != 1 || $_SESSION['login_type'] != 'admin') {
     header("Location: process_login.php");
     exit();
 }
-if($_SESSION['login_type'] != 'admin'){
-    $_SESSION['login_status']=0;
-    header("Location: process_login.php");
-    exit();
-}
+
 include_once 'db_config.php';
-include_once 'header.php'; ?>
+include_once 'header.php'; 
+
+// Database connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch contact info
+$stmt = $conn->prepare("SELECT mobile, email, description FROM contactus");
+$stmt->execute();
+$stmt->bind_result($mob_no, $email_id, $desc);
+$stmt->fetch();
+$stmt->close();
+$conn->close();
+?>
+
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -31,118 +38,123 @@ include_once 'header.php'; ?>
                     <li class="active">Contact Us</li>
                 </ol>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-        <!-- /row -->
-        <?php if(isset($_GET['deleted'])){ ?>
+
+        <?php if (isset($_GET['deleted'])): ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-success alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                         deleted Successfully! </div>
-                </div>
-            </div>
-        <?php } ?>
-
-        <?php if(isset($_GET['error1'])){ ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Error deleting image.Please Try Again!</div>
-                </div>
-            </div>
-        <?php } ?>
-
-        <?php if(isset($_GET['success'])){ ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                         Stored Successfully! </div>
-                </div>
-            </div>
-        <?php }
-
-        if(isset($_GET['error'])){ ?>
-            <div class="row m-b-20">
-                <div class="col-md-12">
-                    <div class="alert alert-danger alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Error Adding  Store. Please Try Again! </div>
-                </div>
-            </div>
-        <?php } ?>
-        <?php if(isset($_GET['success2'])){ ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Edited Successfully! </div>
-                </div>
-            </div>
-        <?php }
-
-        if (isset($_GET['error2'])) { ?>
-            <div class="row m-b-20">
-                <div class="col-md-12">
-                    <div class="alert alert-danger alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Error in Editing. Please Try Again!
+                        Deleted Successfully!
                     </div>
                 </div>
             </div>
-        <?php } ?>
-        <?php
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $stmt = $conn->prepare("select mobile, email, description from contactus");
-        $stmt->execute();
-        $stmt->bind_result($mob_no, $email_id, $desc);
-        $stmt->fetch();
-        $conn->close();
-        ?>
+        <?php endif; ?>
 
+        <?php if (isset($_GET['error1'])): ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Error deleting image. Please try again!
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['success'])): ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Stored Successfully!
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['error'])): ?>
+            <div class="row m-b-20">
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Error adding store. Please try again!
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['success2'])): ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Edited Successfully!
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['error2'])): ?>
+            <div class="row m-b-20">
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Error in editing. Please try again!
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <style>
+            .formH{
+                display: flex; justify-content: center; align-items: center;
+            }
+
+            .white-box{
+                width: 50%; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); border-radius: 8px;
+
+            }
+            
+        </style>
+
+        <!-- Contact Form -->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 formH">
                 <div class="white-box">
                     <h3 class="box-title m-b-0">Contact Us</h3>
                     <br>
                     <form class="form" method="post" action="process-contact-us.php" enctype="multipart/form-data">
-
                         <div class="form-group row">
                             <label for="mobile" class="col-2 col-form-label">Mobile No</label>
                             <div class="col-6">
                                 <input class="form-control" type="text" placeholder="Mobile" name="mobile"
-                                       id="mobile" value="<?php echo $mob_no;?>" required>
+                                       id="mobile" value="<?php echo htmlspecialchars($mob_no); ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-2 col-form-label">Email Id</label>
                             <div class="col-6">
                                 <input class="form-control" type="email" placeholder="Email" name="email"
-                                       id="email" value="<?php echo $email_id; ?>">
+                                       id="email" value="<?php echo htmlspecialchars($email_id); ?>">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="title" class="col-2 col-form-label">Description</label>
+                            <label for="description" class="col-2 col-form-label">Description</label>
                             <div class="col-6">
-                                <textarea name="description" id="" class="form-control" placeholder="Description" cols="10" rows="2"><?php echo $desc;?></textarea>
+                                <textarea name="description" id="description" class="form-control"
+                                          placeholder="Description" cols="10" rows="2"><?php echo htmlspecialchars($desc); ?></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-8">
-                                <button type="submit" name="submit" class="btn btn-success waves-effect waves-light m-r-10 pull-right">Update</button></div>
+                                <button type="submit" name="submit" class="btn btn-success waves-effect waves-light m-r-10 pull-right">Submit</button>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-
     </div>
-    <!-- /.container-fluid -->
-
     <?php include_once 'footer.php'; ?>
+</div>

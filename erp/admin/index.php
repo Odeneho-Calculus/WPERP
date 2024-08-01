@@ -20,7 +20,7 @@ include_once 'header.php'; ?>
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="row bg-title">
+        <div class="row bg-title" style="padding-left: 12%;">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <h4 class="page-title">Dashboard</h4>
             </div>
@@ -130,46 +130,6 @@ include_once 'header.php'; ?>
         $conn3->close();
 
         ?>
-        <!-- <div class="row">
-
-                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                    <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                        <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Reseller</h3>
-                        <div class="text-left">
-                            <a href="reseller.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                            src="../plugins/images/icon/25.png" width="50px;" height="50px;"  alt="reseller_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_reseller_id)? 0 : $total_reseller_id); ?></h1></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                    <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                        <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Users</h3>
-                        <div class="text-left">
-                            <a href="user.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                            src="../plugins/images/icon/26.png" width="50px;" height="50px;"  alt="user_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_user_id)? 0 : $total_user_id); ?></h1></a>
-                        </div>
-                    </div>
-                </div>
-
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total Campaign</h3>
-                    <div class="text-left">
-                        <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/28.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($total_campaign)? 0 : $total_campaign); ?></h1></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
-                <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
-                    <h3 class="box-title" style="color: white;font-size: 16px;font-weight: bold;">Total No. (Today's)</h3>
-                    <div class="text-left">
-                        <a href="deliveryapp.php"><h1 style="color: white;font-size: 25px;font-weight: bold;"><img
-                                        src="../plugins/images/icon/33.png" width="50px;" height="50px;"  alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">&emsp;<?php echo (empty($today_total_mob_all_cam)? 0 : $today_total_mob_all_cam); ?></h1></a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <style>
             .container{
                 margin-top: 100px;
@@ -186,6 +146,7 @@ include_once 'header.php'; ?>
             .card:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+                cursor: pointer;
             }
 
             /* Card Body */
@@ -256,7 +217,7 @@ include_once 'header.php'; ?>
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-                    <div class="card card-reseller h-100">
+                    <div class="card card-reseller h-100" onclick="location.href='reseller.php';">
                         <div class="card-body">
                             <div class="card-icon">
                                 <img src="../plugins/images/icon/25.png" alt="Reseller Icon" width="30">
@@ -269,8 +230,9 @@ include_once 'header.php'; ?>
                     </div>
                 </div>
 
+
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-                    <div class="card card-users h-100">
+                    <div class="card card-users h-100" onclick="location.href='user.php';">
                         <div class="card-body">
                             <div class="card-icon">
                                 <img src="../plugins/images/icon/26.png" alt="User Icon" width="30">
@@ -284,7 +246,7 @@ include_once 'header.php'; ?>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-                    <div class="card card-campaign h-100">
+                    <div class="card card-campaign h-100" onclick="location.href='deliveryapp.php';">
                         <div class="card-body">
                             <div class="card-icon">
                                 <img src="../plugins/images/icon/28.png" alt="Campaign Icon" width="30">
@@ -298,7 +260,7 @@ include_once 'header.php'; ?>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-                    <div class="card card-todays h-100">
+                    <div class="card card-todays h-100" onclick="location.href='deliveryapp.php';">
                         <div class="card-body">
                             <div class="card-icon">
                                 <img src="../plugins/images/icon/33.png" alt="Today's Total Icon" width="30">
@@ -317,5 +279,4 @@ include_once 'header.php'; ?>
     </div>
     <!-- /.container-fluid -->
 </div>
-<!-- <link href="css/styles.css" rel="stylesheet"> -->
 <?php include_once 'footer.php'; ?>

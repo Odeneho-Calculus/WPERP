@@ -19,15 +19,10 @@ if(isset($_SESSION['login_status'])){
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <title>WP-ERP - Admin Login</title>
-    <!-- Bootstrap Core CSS -->
-<!--     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet"> -->
     <!-- animation CSS -->
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
-    <!-- color CSS --><!-- 
-    <link href="css/colors/blue.css" id="theme" rel="stylesheet"> -->
 </head>
 
 <body style="background: url('../assets/img/bg/erp1.jpg') no-repeat center center fixed; background-size: cover;">
@@ -96,10 +91,10 @@ if(isset($_SESSION['login_status'])){
                             <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
-                     <div class="reg-cont">
+<!--                      <div class="reg-cont">
                       <p><b>New to WP ERP?</b></p>
                       <a href="register.php"><b>Create an account</b></a>
-                    </div>
+                    </div> -->
             </div>
         </div>
     </div>
