@@ -202,7 +202,7 @@ include_once 'header.php'; ?>
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 10px;
+                margin-bottom: 25px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Icon shadow for depth */
             }
 
