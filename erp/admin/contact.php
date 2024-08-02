@@ -6,7 +6,13 @@ if (!isset($_SESSION['login_status']) || $_SESSION['login_status'] != 1 || $_SES
     header("Location: process_login.php");
     exit();
 }
+?>
 
+<head>
+    <title>Contact</title>
+</head>
+
+<?php
 include_once 'db_config.php';
 include_once 'header.php'; 
 

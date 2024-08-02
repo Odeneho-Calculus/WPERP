@@ -20,6 +20,8 @@ include_once 'header.php'; ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -149,16 +151,17 @@ include_once 'header.php'; ?>
             }
        
 .card {
-    border: none;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #ffffff;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0));
+    border-radius: 9px;
+    color: white;
+    padding: 16px;
 }
 
 .card:hover {
@@ -170,6 +173,7 @@ include_once 'header.php'; ?>
 .card-body {
     padding: 20px;
     text-align: center;
+    color: #fff;
 }
 
 /* Card Icon */
@@ -189,13 +193,13 @@ include_once 'header.php'; ?>
 .card-title {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 .card-value {
     font-size: 28px;
     font-weight: bold;
-    color: #444;
+    color: #e0e0e0;
     text-decoration: none;
 }
 
@@ -252,7 +256,7 @@ include_once 'header.php'; ?>
                     <div class="card card-credit">
                         <div class="card-body">
                             <div class="card-icon">
-                                <img src="../plugins/images/icon/37.png" width="50px" height="50px" alt="credit_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                                <img src="./plugins/images/icon/37.png" width="50px" height="50px" alt="credit_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
                             </div>
                             <h3 class="card-title">Total Credit</h3>
                             <div class="card-value">
@@ -261,11 +265,12 @@ include_once 'header.php'; ?>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card card-campaign">
                         <div class="card-body">
                             <div class="card-icon">
-                                <img src="../plugins/images/icon/28.png" width="50px" height="50px" alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                                <img src="./plugins/images/icon/28.png" width="50px" height="50px" alt="campaign_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
                             </div>
                             <h3 class="card-title">Total Campaign</h3>
                             <a href="deliveryapp.php" class="card-value">
@@ -274,11 +279,12 @@ include_once 'header.php'; ?>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card card-todays">
                         <div class="card-body">
                             <div class="card-icon">
-                                <img src="../plugins/images/icon/33.png" width="50px" height="50px" alt="today_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
+                                <img src="./plugins/images/icon/33.png" width="50px" height="50px" alt="today_img" style="background: #FFFFFF;border-radius:20%;padding:2px;">
                             </div>
                             <h3 class="card-title">Total No. (Today's)</h3>
                             <a href="deliveryapp.php" class="card-value">
@@ -287,6 +293,7 @@ include_once 'header.php'; ?>
                         </div>
                     </div>
                 </div>
+
                 <?php if($rollback == 'Enable'){ ?>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12" >
                     <div class="white-box" style="background-color: #feb207;color: white; padding:16px; !important;">
@@ -298,10 +305,23 @@ include_once 'header.php'; ?>
                 </div>
                 <?php } ?>
         </div>
-        <!-- <div class="row">
-            <div style="border: 1px solid rgb(0, 150, 145);border-radius:10px
-             ;" class="col-sm-12">
-                <div class="white-box" id="imge-popups">
+
+        <style>
+            .white-box-override {
+              background: #fff;
+              padding: 25px;
+              margin-bottom: 15px;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+              border-radius: 8px;
+            }
+        </style>
+
+        <div class="row">
+            <div class="col-sm-12 mt-5">
+                <div class="white-box-override" id="imge-popups">
                     <div class="table-responsive" style="display: none;">
                         <table class="table table-striped">
                             <thead >
@@ -465,12 +485,15 @@ include_once 'header.php'; ?>
                     
                 </div>
             </div>
-        </div> -->
+        </div> 
     </div>
-    <div style="height:60px;width:100%;background-image:linear-gradient(green,black,green);position:absolute;top:39pc;">
+    </div>
+
+
+<!--     <div style="height:60px;width:100%;background-image:linear-gradient(green,black,green);position:absolute;top:39pc;">
         <h1 style="color:white;margin-left:34%;font-family: 'Josefin Sans', sans-serif;">OUR PREMIUM CUSTOMERS</h1>
-    </div>
-      <div style="height:16pc;width:100%;background-color:white;color:white;position:absolute;top:43pc" class="scroll">
+    </div> -->
+<!--       <div style="height:16pc;width:100%;background-color:white;color:white;position:absolute;top:43pc" class="scroll">
                 <marquee scrollamount="17"> <img style="margin-top:60px" src="https://www.oruspoon.com/wp-content/uploads/2021/05/Logo-1.png"> 
                 <img style="width:190px;height:190px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5x6MaGkMkmr7TQjLhZuv2-6N8GQUA-SJex4lTFpzkWg&s">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.7qoAWUJ_cpKpWnoivGYQFQHaDV&pid=Api&P=0&h=180">
@@ -499,10 +522,10 @@ include_once 'header.php'; ?>
                 <img style="width:290px;height:190px;" src="./milkyway.jpeg">
                 <img style="width:250px;height:190px" src="./sriram.jpeg">
                 </marquee>
-                </div>
-        <div style="height:5px;width:100%;background-image:linear-gradient(green,black,green);position:absolute;top:59pc;">
+                </div> -->
+        <!-- <div style="height:5px;width:100%;background-image:linear-gradient(green,black,green);position:absolute;top:59pc;">
         <h1 style="color:white;margin-left:34%;font-family: 'Josefin Sans', sans-serif;"></h1>
-    </div>
+    </div> -->
             </ul>
         </div>
     <!-- /.container-fluid -->

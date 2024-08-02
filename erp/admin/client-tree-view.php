@@ -24,8 +24,10 @@ if($_SESSION['login_type'] != 'admin'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robot" content="nofollow,noindex">
-    <!--    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">-->
-    <!--    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
+    <title>Clients</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
     <title>WESEND - Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -69,6 +71,7 @@ if($_SESSION['login_type'] != 'admin'){
 
 <?php
 include_once 'db_config.php';
+include_once 'header.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -81,100 +84,27 @@ $stmt->bind_result($u_username, $profile_pic, $credit);
 $stmt->fetch();
 $conn->close();
 ?>
+<style>
+    .mtop{
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+</style>
 <div id="wrapper">
-    <!-- Top Navigation -->
-    <nav class="navbar navbar-default navbar-static-top m-b-0">
-        <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-            <div class="top-left-part"><a class="logo" href="index.php"><span class="hidden-xs"><strong>WESEND </strong></span></a>
-            </div>
-            <ul class="nav navbar-top-links navbar-left hidden-xs">
-                <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"> ADMIN PANEL </a></li>
-            </ul>
-            <!--            <ul class="nav navbar-top-links navbar-right pull-right">-->
-            <!--<li><a href="login.html"><i class="ti-settings"></i> Settings</a></li>-->
-            <!--                <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>-->
-            <!--            </ul>-->
 
-            <button class ="btn dropdown-toggle pull-right profile" type = "button" data-toggle="dropdown">
-                <?php if (!empty($profile_pic)){ ?>
-                    <img src="img/upload/<?php echo $profile_pic; ?>"  width="40px;" height="40px;" alt="user_image">
-                <?php } else { ?>
-                    <img src="img/upload/user.png"  width="40px;" height="40px;" alt="user_image">
-                <?php } ?><?php echo !empty($u_username)? $u_username : ""; ?> <i class="ti-angle-down p-2"></i><span class = "caret"></span></button>
-            <ul class = "dropdown-menu dropdown-menu-right profile-wth">
-                <li><a href = "login-profile.php"><img src="../plugins/images/icon/34.png" width="30px;" height="30px;" alt="profile_img"> Profile</a></li>
-                <li><a href = "change-password.php"><img src="../plugins/images/icon/36.png" width="30px;" height="30px;" alt="password_img"> Change Password</a></li>
-                <li><a href="logout.php"><img src="../plugins/images/icon/38.png" width="30px;" height="30px;" alt="logout_img"> Logout</a></li>
-            </ul>
-        </div>
-
-        <!-- /.navbar-header -->
-        <!-- /.navbar-top-links -->
-        <!-- /.navbar-static-side -->
-    </nav>
-    <!-- End Top Navigation -->
-    <!-- Left navbar-header -->
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-            <ul class="nav" id="side-menu">
-                <br/>
-                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
-                <li> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu"> Dashboard</span></a> </li>
-
-
-                <!--<li> <a href="add-gallery.php" class="waves-effect"><i class="ti-plus p-r-10"></i> <span class="hide-menu">Add Gallery</span></a> </li>-->
-                <li> <a href="sendwhatsapp.php" class="waves-effect"><img src="../plugins/images/icon/21.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu"> Send Whatsapp SMS</span></a> </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/23.png" width=40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="deliveryapp.php"><img src="../plugins/images/icon/28.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
-                        <li><a href="search-mobile-no.php"><img src="../plugins/images/icon/33.png" width="40px;" height="40px;" alt="mobile_img"> Search Mobile No.</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/24.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="reseller-report.php"><img src="../plugins/images/icon/29.png" width="30px;" height="30px;" alt="report_img"> Reseller Report</a></li>
-                        <li><a href="user-report.php"><img src="../plugins/images/icon/29.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
-
-                    </ul>
-                </li>
-                <li> <a href="reseller.php" class="waves-effect"><img src="../plugins/images/icon/25.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
-                <li> <a href="user.php" class="waves-effect"><img src="../plugins/images/icon/26.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
-
-                <li> <a href="filter.php" class="waves-effect"><img src="../plugins/images/icon/22.png" width="30px;" height="30px;" alt="filter_wp_img"><span class="hide-menu">Filter Whatsapp No.</span></a> </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/27.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="login-profile.php"><img src="../plugins/images/icon/34.png" width="40px;" height="40px;" alt="up_profile_img"> Update Profile</a></li>
-                        <li><a href = "change-password.php"><img src="../plugins/images/icon/36.png" width="35px;" height="35px;" alt="ch_pass_img"> Change Password</a></li>
-                        <li><a href="update_credit.php"><img src="../plugins/images/icon/37.png" width="35px;" height="35px;" alt="up_credit_img"> Update Credit</a></li>
-                    </ul>
-                </li>
-                <li> <a href="news.php" class="waves-effect"><img src="../plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
-                <li> <a href="client-tree-view.php" class="waves-effect"><img src="../plugins/images/icon/31.png" width=30px;" height="30px;" alt="tree_img"> <span class="hide-menu"> Tree View</span></a> </li>
-                <!--                <li> <a href="search-mobile-no.php" class="waves-effect"><img src="../plugins/images/icon/19.png" width=30px;" height="30px;" alt=""> <span class="hide-menu"> Search Mobile No.</span></a> </li>-->
-                <li> <a href="contact.php" class="waves-effect"><img src="../plugins/images/icon/32.png" width=30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Left navbar-header end -->
-    <div class="row">
+    <div class="row mtop">
         <div class="container col-lg-12">
-            <div class="white-box pull-right tree-view">
+            <div class="white-box tree-view">
                 <h3 class="box-title m-b-0">User Tree Listing will be displayed below(if any user will be in database): </h3>
                 <br/>
-                <div id="treeview" style="width:600px;"></div>
+                <div id="treeview" style="width: 100%;"></div>
             </div>
         </div>
     </div>
-</body>
-</html>
 
-<footer class="footer text-center"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> All rights reserved | Developed By <a href="https://wesend.in/" target="_blank" rel="nofollow">Divine Infosec</a></footer>
 </div>
+<?php include_once 'footer.php'; ?>
 <!-- /#page-wrapper -->
-</div>
 
 <!-- /#wrapper -->
 <!-- jQuery -->

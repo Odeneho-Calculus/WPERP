@@ -16,6 +16,13 @@ if ($_SESSION['login_type'] != 'admin') {
     header("Location: process_login.php");
     exit();
 }
+?>
+
+<head>
+    <title>Client details</title>
+</head>
+
+<?php
 include_once 'db_config.php';
 include_once 'header.php'; ?>
 <!-- Page Content -->

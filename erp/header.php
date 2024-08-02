@@ -72,37 +72,53 @@ $stmt->bind_result($u_username, $profile_pic, $credit);
 $stmt->fetch();
 $conn->close();
 ?>
-<div  id="wrapper">
-    <!-- Top Navigation -->
-    <nav style="background-image: linear-gradient(rgb(0, 138, 177),rgb(0, 0, 0));" class="navbar navbar-default navbar-static-top m-b-0">
-        <div style="background-image: linear-gradient(rgb(0, 138, 177),rgb(0, 0, 0));"  class="navbar-header" style="background:#128c79;"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-            <div style="background-image: linear-gradient(rgb(0, 138, 177),rgb(0, 0, 0));" class="top-left-part" style="background: #15b49a;"><a class="logo" href="index.php"><span class="hidden-xs"><strong>WP ERP </strong></span></a></div>
-            <ul class="nav navbar-top-links navbar-left hidden-xs">
-                <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"> </a></li>
-            </ul>
-<!--            <ul class="nav navbar-top-links navbar-right pull-right">-->
-                <!--<li><a href="login.html"><i class="ti-settings"></i> Settings</a></li>-->
-<!--                <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>-->
-<!--            </ul>-->
 
-                <button style="background-image: linear-gradient(rgb(0, 138, 177),rgb(0, 0, 0));" class ="btn dropdown-toggle pull-right profile" style="background: #128c79;" type = "button" data-toggle="dropdown">
-                    <?php if (!empty($profile_pic)){ ?>
-                    <img src="admin/img/upload/<?php echo $profile_pic; ?>"  width="40px;" height="40px;" alt="user_image">
+<style>
+    .profile-image {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .wperp{
+        font-size: 20px; 
+        font-weight: bolder; 
+        font-family: 'Arial Black', 'Arial', sans-serif;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+        color: linear-gradient(to right, #e0e0e0, white);
+
+    }
+</style>
+
+<div  id="wrapper">
+       <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-static-top m-b-0">
+       <div class="navbar-header"> 
+    <a class="navbar-toggle hidden-sm hidden-md hidden-lg" href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+    <ul class="nav navbar-top-links navbar-left hidden-xs">
+        <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"><span class="wperp">WP ERP USER PANEL</span></a></li>
+    </ul>
+
+    <button class="btn dropdown-toggle pull-right profile" type="button" data-toggle="dropdown" style="font-size: 20px;">
+        <?php if (!empty($profile_pic)){ ?>
+                    <img class="profile-image" src="admin/img/upload/<?php echo $profile_pic; ?>"  width="40px;" height="40px;" alt="user_image">
                     <?php } else { ?>
                         <img src="admin/img/upload/user.png"  width="40px;" height="40px;" alt="user_image">
-                   <?php } ?><?php echo !empty($u_username)? $u_username : ""; ?> <i class="ti-angle-down p-2"></i><span class = "caret"></span></button>
-                <ul class = "dropdown-menu dropdown-menu-right profile-wth">
-                    <li><a href = "login-profile.php"><img src="plugins/images/icon/34.png" width="30px;" height="30px;" alt=""> Profile</a></li>
-                    <li><a href = "change-password.php"><img src="plugins/images/icon/36.png" width="25px;" height="25px;" alt=""> Change Password</a></li>
-                    <li><a href="logout.php"><img src="plugins/images/icon/38.png" width="30px;" height="30px;" alt=""> Logout</a></li>
-                </ul>
-        </div>
+                   <?php } ?><?php echo !empty($u_username)? $u_username : ""; ?><span class = "caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right profile-wth">
+        <li><a href="login-profile.php"><img src="./plugins/images/icon/34.png" width="30px" height="30px" alt="profile_img"> Profile</a></li>
+        <li><a href="change-password.php"><img src="./plugins/images/icon/36.png" width="30px" height="30px" alt="password_img"> Change Password</a></li>
+        <li><a href="logout.php"><img src="./plugins/images/icon/38.png" width="30px" height="30px" alt="logout_img"> Logout</a></li>
+    </ul>
+</div>
+
 
         <!-- /.navbar-header -->
         <!-- /.navbar-top-links -->
         <!-- /.navbar-static-side -->
     </nav>
     <!-- End Top Navigation -->
+
+    
     <!-- Left navbar-header -->
      <style>
         .sidebar{
@@ -112,7 +128,7 @@ $conn->close();
             /* width: 22%; */
             border-right: 1px solid #000000;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-            /* padding: 0 5px; */
+            padding: 0 10px;
         }
         .sidebar-nav {
         list-style: none; /* Remove bullet points */
@@ -140,100 +156,60 @@ $conn->close();
         color: #ffe0b3; 
     }
 
+    
+
      </style>
     <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+        <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <br/>
-                <li style="color:white;font-size:16px;">&emsp;<b>TOTAL CREDIT :&nbsp;<span class="hide-menu" style="font-size:26px;color:white "><?php echo $credit; ?></span></b></li>
-                <li class="dhh"> <a href="index.php" class="waves-effect"><img src="plugins/images/icon/11.png" width="35px;" height="35px;" alt=""> <span class="hide-menu">DASHBOARD</span></a> </li>
+                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
+                <li> <a href="index.php" class="waves-effect"><img src="./plugins/images/icon/11.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu"> Dashboard</span></a> </li>
 
 
-                  <!--<li> <a href="add-gallery.php" class="waves-effect"><i class="ti-plus p-r-10"></i> <span class="hide-menu">Add Gallery</span></a> </li>-->
-                <li class="dhh"> <a href="sendwhatsapp.php" class="waves-effect"><img src="plugins/images/icon/6.png" width="35px;" height="35px;" alt=""> <span class="hide-menu">SEND WHATSAPP SMS</span></a> </li>
-
-                <li class="dhh">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="plugins/images/icon/16.png" width="40px;" height="40px;" alt=""> <span class="hide-menu">WHATSAPP REPORT <span class="fa arrow"></span></span></a>
+                  
+                <li> <a href="sendwhatsapp.php" class="waves-effect"><img src="./plugins/images/icon/6.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu"> Send Whatsapp SMS</span></a> </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/16.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
-                        <li style="background-color:black" class="dhh"><a href="deliveryapp.php"><img src="plugins/images/icon/2.png" width="35px;" height="35px;" alt=""> <span class="hide-menu"> CAMPAIGN WISE </span></a></li>
+                        <li><a href="deliveryapp.php"><img src="./plugins/images/icon/2.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
                     </ul>
                 </li>
-                 <?php if($user_type == 'user') { ?>
-                <li class="dhh">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="plugins/images/icon/24.png" width="40px;" height="40px;" alt=""> <span class="hide-menu">CREDIT REPORT <span class="fa arrow"></span></span></a>
+                <li>
+                <?php if($user_type == 'user') { ?>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/24.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="dhh" style="background-color:black"><a href="user-report.php"><img src="plugins/images/icon/29.png" width="30px;" height="30px;" alt=""><span class="hide-menu"> USER REPORT </span></a></li>
-                    </ul>
-                </li>
-              <?php } ?>
-                <?php if($user_type == 'reseller') { ?>
-                <li class="dhh"> <a href="reseller.php" class="waves-effect"><img src="plugins/images/icon/10.png" width="30px;" height="30px;" alt=""> <span class="hide-menu"> MANAGE RESELLER</span></a> </li>
-
-                <li class="dhh"> <a href="user.php" class="waves-effect"><img src="plugins/images/icon/7.png" width="30px;" height="40px;" alt=""> <span class="hide-menu">MANAGE USER</span></a> </li>
-
-                <li class="dhh">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="plugins/images/icon/4.png" width="40px;" height="40px;" alt=""> <span class="hide-menu">CREDIT REPORT <span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="reseller-report.php"><img src="plugins/images/icon/9.png" width="45px;" height="45px;" alt=""> RESELLER REPORTt</a></li>
-                        <li><a href="user-report.php"><img src="plugins/images/icon/9.png" width="40px;" height="40px;" alt=""> <span class="hide-menu"> USER REPORT</span> </a></li>
+                        <li><a href="user-report.php"><img src="./plugins/images/icon/9.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
                     </ul>
                 </li>
                 <?php } ?>
 
-                <li class="dhh">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="plugins/images/icon/14.png" width="40px;" height="40px;" alt=""> <span class="hide-menu">SETTINGS <span class="fa arrow"></span></span></a>
+                <?php if($user_type == 'reseller') { ?>
+                <li> <a href="reseller.php" class="waves-effect"><img src="./plugins/images/icon/10.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
+                <li> <a href="user.php" class="waves-effect"><img src="./plugins/images/icon/7.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
+                
+                <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/4.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="dhh" style="background-color:black"><a href="login-profile.php"><img src="plugins/images/icon/15.png" width="40px;" height="40px;" alt="">  <span class="hide-menu"> Update Profile </span></a></li>
-                        <li class="dhh" style="background-color:black"><a href = "change-password.php"><img src="plugins/images/icon/36.png" width="35px;" height="35px;" alt="">  <span class="hide-menu"> Change Password </span></a></li>
-<!--                        <li><a href="update_credit.php"><img src="plugins/images/icon/15.png" width="30px;" height="30px;" alt=""> Update Credit</a></li>-->
+                        <li><a href="user-report.php"><img src="./plugins/images/icon/9.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
                     </ul>
                 </li>
-                <li class="dhh"> <a href="news.php" class="waves-effect"><img src="plugins/images/icon/30.png" width="30px;" height="30px;" alt=""> <span class="hide-menu">NEWS</span></a> </li>
+                <?php } ?>
 
-<!--                <li> <a href="client-tree-view.php" class="waves-effect"><img src="plugins/images/icon/3.png" width=30px;" height="30px;" alt=""> <span class="hide-menu"> Client Tree View</span></a> </li>-->
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/14.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="login-profile.php"><img src="./plugins/images/icon/15.png" width="40px;" height="40px;" alt="up_profile_img"> Update Profile</a></li>
+                        <li><a href = "change-password.php"><img src="./plugins/images/icon/36.png" width="35px;" height="35px;" alt="ch_pass_img"> Change Password</a></li>
+                    </ul>
+                </li>
+                <li> <a href="news.php" class="waves-effect"><img src="./plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
 
-                <li class="dhh"> <a href="contact.php" class="waves-effect"><img src="plugins/images/icon/1.png" width=30px;" height="30px;" alt=""> <span class="hide-menu"> CONTACT US</span></a> </li>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                 <div>
-                 <li style="font-size:28px;height:70px;background-image: linear-gradient(rgb(255, 0, 149),rgb(0, 0, 0));font-family: 'Kalam', cursive;" <span class="hide-menu">Version-2.0</span></li>
-                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-               
-    </div>
-     <div class="scroll">
-                <marquee height="100px" width="100%">this is next level techs</marquee>
-                </div>
+                <li> <a href="contact.php" class="waves-effect"><img src="./plugins/images/icon/1.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
             </ul>
         </div>
+    </div>
     <!-- Left navbar-header end -->
+
+    </body>
+
+</html>
