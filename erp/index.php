@@ -28,7 +28,7 @@ include_once 'header.php'; ?>
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <h4 class="page-title">Dashboard</h4>
-                <span>Welcome to WESEND admin panel !</span>
+                <span>Welcome to WESEND User panel !</span>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
@@ -150,83 +150,83 @@ include_once 'header.php'; ?>
                 margin-right: 50px;
             }
        
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0));
-    border-radius: 9px;
-    color: white;
-    padding: 16px;
-}
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0));
+            border-radius: 9px;
+            color: white;
+            padding: 16px;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-/* Card Body */
-.card-body {
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-}
+        /* Card Body */
+        .card-body {
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
 
-/* Card Icon */
-.card-icon {
-    background-color: #EDF1F5;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        /* Card Icon */
+        .card-icon {
+            background-color: #EDF1F5;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Card Titles and Values */
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-}
+        /* Card Titles and Values */
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
 
-.card-value {
-    font-size: 28px;
-    font-weight: bold;
-    color: #e0e0e0;
-    text-decoration: none;
-}
+        .card-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-decoration: none;
+        }
 
-/* Specific Card Styles */
-.card-credit {
-    border-top: 4px solid #22C8C5; /* Teal top border */
-}
+        /* Specific Card Styles */
+        .card-credit {
+            border-top: 4px solid #22C8C5; /* Teal top border */
+        }
 
-.card-campaign {
-    border-top: 4px solid #20B2AA; /* Light sea green top border */
-}
+        .card-campaign {
+            border-top: 4px solid #20B2AA; /* Light sea green top border */
+        }
 
-.card-todays {
-    border-top: 4px solid #4682B4; /* Steel blue top border */
-}
+        .card-todays {
+            border-top: 4px solid #4682B4; /* Steel blue top border */
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-    .card-title {
-        font-size: 16px;
-    }
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .card-title {
+                font-size: 16px;
+            }
 
-    .card-value {
-        font-size: 20px;
-    }
-}
- 
+            .card-value {
+                font-size: 20px;
+            }
+        }
+        
        </style>
        
        
