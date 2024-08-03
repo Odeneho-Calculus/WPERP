@@ -137,14 +137,14 @@ include_once 'header.php'; ?>
             .card {
                 border: none;
                 border-radius: 10px; /* Adjust to 4px if preferred */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
                 transition: transform 0.3s, box-shadow 0.3s;
                 height: 100%;
             }
 
             .card:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced hover effect */
                 cursor: pointer;
             }
 
