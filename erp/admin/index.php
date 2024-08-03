@@ -20,7 +20,7 @@ include_once 'header.php'; ?>
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="row bg-title" style="padding-left: 12%;">
+        <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <h4 class="page-title">Dashboard</h4>
             </div>

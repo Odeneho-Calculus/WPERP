@@ -29,6 +29,7 @@
     <link href="admin/css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="admin/css/style.css" rel="stylesheet">
+    <link href="admin/css/preloader.css" rel="stylesheet">
     <!-- color CSS -->
 
     <link href="admin/css/colors/blue.css" id="theme" rel="stylesheet">
@@ -53,10 +54,20 @@
 </head>
 
 <body class="fix-sidebar">
+
 <!-- Preloader -->
-<!--<div class="preloader">
-    <div class="cssload-speeding-wheel"></div>
-</div>-->
+<div id="preloader">
+    <div id="preloader-spinner"></div>
+</div>
+
+<!-- Mobile Warning Dialog -->
+<div id="mobile-warning-dialog">
+    <div id="mobile-warning-content">
+        <i class="fas fa-tools fa-3x"></i> <!-- Maintenance Icon -->
+        <p><strong>Mobile view is under construction. Please switch to desktop mode.</strong></p>
+    </div>
+</div>
+
 <?php
 include_once 'db_config.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -209,6 +220,9 @@ $conn->close();
         </div>
     </div>
     <!-- Left navbar-header end -->
+
+    <!-- preloader script -->
+    <script src="./admin/js/preloader.js"></script>
 
     </body>
 

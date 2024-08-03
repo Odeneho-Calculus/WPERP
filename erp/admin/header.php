@@ -13,6 +13,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!--Security-->
+<!--     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0"> -->
+
     <!-- Bootstrap Core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
@@ -31,6 +37,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/preloader.css" rel="stylesheet">
     <!-- color CSS -->
 
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
@@ -45,10 +52,20 @@
 </head>
 
 <body class="fix-sidebar">
+
 <!-- Preloader -->
-<!--<div class="preloader">
-    <div class="cssload-speeding-wheel"></div>
-</div>-->
+<div id="preloader">
+    <div id="preloader-spinner"></div>
+</div>
+
+<!-- Mobile Warning Dialog -->
+<div id="mobile-warning-dialog">
+    <div id="mobile-warning-content">
+        <i class="fas fa-tools fa-3x"></i> <!-- Maintenance Icon -->
+        <p><strong>Mobile view is under construction. Please switch to desktop mode.</strong></p>
+    </div>
+</div>
+
 <?php
 include_once 'db_config.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -146,35 +163,45 @@ $conn->close();
             <ul class="nav" id="side-menu">
                 <br/>
                 <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
-                <li> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu"> Dashboard</span></a> </li>
-                <li> <a href="sendwhatsapp.php" class="waves-effect"><img src="../plugins/images/icon/21.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu"> Send Whatsapp SMS</span></a> </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/23.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
+
+                <li class="sdbrLnks"> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" alt="dasboard_img"> <span class="hide-menu ml-2"> Dashboard</span></a> </li>
+               
+                <li class="sdbrLnks"> <a href="sendwhatsapp.php" class="waves-effect"><img src="../plugins/images/icon/21.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu ml-2"> Send Whatsapp SMS</span></a> </li>
+
+                <li class="sdbrLnks">
+                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/23.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu ml-2">Whatsapp Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="deliveryapp.php"><img src="../plugins/images/icon/28.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
                         <li><a href="search-mobile-no.php"><img src="../plugins/images/icon/33.png" width="40px" height="40px" alt="mobile_img"> Search Mobile No.</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/24.png" width="40px" height="40px" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
+
+                <li class="sdbrLnks">
+                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/24.png" width="40px" height="40px" alt="credit_img"> <span class="hide-menu ml-2">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="reseller-report.php"><img src="../plugins/images/icon/29.png" width="30px" height="30px" alt="report_img"> Reseller Report</a></li>
                         <li><a href="user-report.php"><img src="../plugins/images/icon/29.png" width="30px" height="30px" alt="report_img_usr"> User Report</a></li>
                     </ul>
                 </li>
-                <li> <a href="reseller.php" class="waves-effect"><img src="../plugins/images/icon/25.png" width="45px" height="45px" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
-                <li> <a href="user.php" class="waves-effect"><img src="../plugins/images/icon/26.png" width="40px" height="40px" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/27.png" width="40px" height="40px" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
+
+                <li class="sdbrLnks"> <a href="reseller.php" class="waves-effect"><img src="../plugins/images/icon/25.png" width="45px" height="45px" alt="reseller_img"> <span class="hide-menu ml-2"> Manage Reseller</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="user.php" class="waves-effect"><img src="../plugins/images/icon/26.png" width="40px" height="40px" alt="user_img"> <span class="hide-menu ml-2">Manage User</span></a> </li>
+                
+                <li class="sdbrLnks">
+                    <a href="javascript:void(0);" class="waves-effect"><img src="../plugins/images/icon/27.png" width="40px" height="40px" alt="setting_img"> <span class="hide-menu ml-2">Settings <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="login-profile.php"><img src="../plugins/images/icon/34.png" width="40px" height="40px" alt="up_profile_img"> Update Profile</a></li>
                         <li><a href = "change-password.php"><img src="../plugins/images/icon/36.png" width="35px" height="35px" alt="ch_pass_img"> Change Password</a></li>
                         <li><a href="update_credit.php"><img src="../plugins/images/icon/37.png" width="35px" height="35px" alt="up_credit_img"> Update Credit</a></li>
                     </ul>
                 </li>
-                <li> <a href="news.php" class="waves-effect"><img src="../plugins/images/icon/30.png" width="30px" height="30px" alt="news_img"> <span class="hide-menu">News</span></a> </li>
-                <li> <a href="client-tree-view.php" class="waves-effect"><img src="../plugins/images/icon/31.png" width="30px" height="30px" alt="tree_img"> <span class="hide-menu"> Tree View</span></a> </li>
-                <li> <a href="contact.php" class="waves-effect"><img src="../plugins/images/icon/32.png" width="30px" height="30px" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="news.php" class="waves-effect"><img src="../plugins/images/icon/30.png" width="30px" height="30px" alt="news_img"> <span class="hide-menu ml-2">News</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="client-tree-view.php" class="waves-effect"><img src="../plugins/images/icon/31.png" width="30px" height="30px" alt="tree_img"> <span class="hide-menu ml-2"> Tree View</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="contact.php" class="waves-effect"><img src="../plugins/images/icon/32.png" width="30px" height="30px" alt="contact_img"> <span class="hide-menu ml-2"> Contact Us</span></a> </li>
             </ul>
         </div>
     </div>
@@ -184,5 +211,8 @@ $conn->close();
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- preloader script -->
+    <script src="js/preloader.js"></script>
 </body>
 </html>
