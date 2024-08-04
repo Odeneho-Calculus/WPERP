@@ -97,6 +97,12 @@ $conn->close();
         color: linear-gradient(to right, #e0e0e0, white);
 
     }
+    .navbar-header{
+        background-color: #ed5094 !important;
+    }
+    .profile{
+        background-color: #ed5094 !important;
+    }
 </style>
 
 <div  id="wrapper">
@@ -105,7 +111,7 @@ $conn->close();
        <div class="navbar-header"> 
     <a class="navbar-toggle hidden-sm hidden-md hidden-lg" href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
     <ul class="nav navbar-top-links navbar-left hidden-xs">
-        <li><a href="javascript:void(0)" class="hidden-xs waves-effect waves-light"><span class="wperp">WP ERP USER PANEL</span></a></li>
+        <li><a href="index.php" class="hidden-xs waves-effect waves-light"><span class="wperp">WP ERP USER PANEL</span></a></li>
     </ul>
 
     <button class="btn dropdown-toggle pull-right profile" type="button" data-toggle="dropdown" style="font-size: 20px;">
@@ -133,7 +139,8 @@ $conn->close();
     <!-- Left navbar-header -->
      <style>
         .sidebar{
-            background-color: #f97d4d;
+            background-color: #ed5094;
+            /* background-color: #f97d4d; */
             color: #fff; 
             overflow: hidden;
             /* width: 22%; */

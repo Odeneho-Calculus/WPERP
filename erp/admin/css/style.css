@@ -239,7 +239,7 @@ p{line-height:1.6}b{font-weight:600}a:active,a:focus,a:hover{outline:0;text-deco
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #f0f0f0; /* Adjust as needed */
+    /* background-color: #f0f0f0; Adjust as needed */
 }
 
 .login-register {
@@ -378,7 +378,7 @@ RESPONSIVE
 }
 
 .profile{
-   height:60px;  background: #f97d4d;
+   height:60px;  background: #ed5094;
     color:#ffffff;
 }
 .profile-wth{

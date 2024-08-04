@@ -123,6 +123,11 @@ include_once 'header.php'; ?>
 <!--        </div>-->
 
         <!-- /.row -->
+         <style>
+            #myTable {
+    width: 100%;
+}
+         </style>
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box" id="imge-popups">
@@ -135,7 +140,6 @@ include_once 'header.php'; ?>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Date</th>
-<!--                                <th>Action</th>-->
                             </tr>
                             </thead>
                             <tbody>
@@ -156,8 +160,6 @@ include_once 'header.php'; ?>
                                         <td><?php echo $title; ?></td>
                                         <td><?php echo $description; ?></td>
                                         <td><?php  echo date_format(date_create($created_date),'d-m-Y h:i'); ?></td>
-<!--                                        <td>-->
-<!--                                            <a title="Delete Entry" href="delete-news.php?id=--><?php //echo $id; ?><!--" class="btn btn-danger btn-circle" onclick="if(!confirm('Are you sure to delete this entry?')){return false;}"><i class="fa fa-trash"></i> </a></td>-->
                                     </tr>
                                     <?php $inc++; }
                             }

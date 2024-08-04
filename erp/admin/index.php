@@ -140,6 +140,7 @@ include_once 'header.php'; ?>
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
                 transition: transform 0.3s, box-shadow 0.3s;
                 height: 100%;
+                background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0));
             }
 
             .card:hover {
@@ -170,34 +171,35 @@ include_once 'header.php'; ?>
             .card-title {
                 font-size: 18px;
                 font-weight: bold;
-                color: #333; /* Use #fff for light backgrounds */
+                color: #fff; /* Use #fff for light backgrounds */
             }
 
             .card-value {
                 font-size: 28px;
                 font-weight: bold;
-                color: #444; /* Use #fff for light backgrounds */
+                color: #fff; /* Use #fff for light backgrounds */
                 text-decoration: none;
             }
 
             /* Specific Card Styles */
             .card-reseller {
                 /* feb207 */
-                background-color: #ffffff;
+                /* background-color: #ffffff; */
+                /* background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0)); */
             }
 
             .card-users {
-                background-color: #ffffff;
+                /* background-color: #ffffff; */
                 /* F97D4D */
             }
 
             .card-campaign {
-                background-color: #ffffff;
+                /* background-color: #ffffff; */
                 /* 20b2aa */
             }
 
             .card-todays {
-                background-color: #ffffff;
+                /* background-color: #ffffff; */
                 /* 4682b4 */
             }
 
