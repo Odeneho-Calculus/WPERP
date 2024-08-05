@@ -56,11 +56,12 @@
 }
 
 .sdbrLnks {
-    width: 55%;
-    max-width: 100%;
+
+    max-width: 56%;
     min-width: 190px;
-    background-color: #2962ff;
+    background-color: #01579b;
     border-radius: 10px;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }

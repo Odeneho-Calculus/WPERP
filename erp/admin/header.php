@@ -131,13 +131,13 @@ $conn->close();
     <!-- Left navbar-header -->
     <style>
         .sidebar {
-            background-color: #343a40;
+            background-color: #2196f3;
             color: #fff; 
             overflow: hidden;
             /* width: 22%; */
             border-right: 1px solid #000000;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-            padding: 0 10px;
+            padding: 0 5px;
         }
         .sidebar-nav {
             list-style: none; /* Remove bullet points */
@@ -165,7 +165,7 @@ $conn->close();
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <br/>
-                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color: green; "><?php echo $credit; ?></span></b></li>
+                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:#ff1744; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8); "><?php echo $credit; ?></span></b></li>
 
                 <li class="sdbrLnks"> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" alt="dasboard_img"> <span class="hide-menu ml-2"> Dashboard</span></a> </li>
                

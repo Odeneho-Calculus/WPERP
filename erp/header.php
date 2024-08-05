@@ -147,7 +147,7 @@ $conn->close();
             /* width: 22%; */
             border-right: 1px solid #000000;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-            padding: 0 10px;
+            padding: 0 5px;
         }
         .sidebar-nav {
         list-style: none; /* Remove bullet points */
@@ -182,19 +182,22 @@ $conn->close();
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <br/>
-                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
-                <li> <a href="index.php" class="waves-effect"><img src="./plugins/images/icon/11.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu"> Dashboard</span></a> </li>
+                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:#ff1744; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8); "><?php echo $credit; ?></span></b></li>
+
+                <li class="sdbrLnks"> <a href="index.php" class="waves-effect"><img src="./plugins/images/icon/11.png" width="35px;" height="35px;" alt="dasboard_img"> <span class="hide-menu ml-2"> Dashboard</span></a> </li>
 
 
                   
-                <li> <a href="sendwhatsapp.php" class="waves-effect"><img src="./plugins/images/icon/6.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu"> Send Whatsapp SMS</span></a> </li>
-                <li>
+                <li class="sdbrLnks"> <a href="sendwhatsapp.php" class="waves-effect"><img src="./plugins/images/icon/6.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu ml-2"> Send Whatsapp SMS</span></a> </li>
+
+                <li class="sdbrLnks">
                     <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/16.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="deliveryapp.php"><img src="./plugins/images/icon/2.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
                     </ul>
                 </li>
-                <li>
+
+                <li class="sdbrLnks">
                 <?php if($user_type == 'user') { ?>
                     <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/24.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
@@ -204,9 +207,12 @@ $conn->close();
                 <?php } ?>
 
                 <?php if($user_type == 'reseller') { ?>
-                <li> <a href="reseller.php" class="waves-effect"><img src="./plugins/images/icon/10.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
-                <li> <a href="user.php" class="waves-effect"><img src="./plugins/images/icon/7.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="reseller.php" class="waves-effect"><img src="./plugins/images/icon/10.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="user.php" class="waves-effect"><img src="./plugins/images/icon/7.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
                 
+                <li class="sdbrLnks">
                 <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/4.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="user-report.php"><img src="./plugins/images/icon/9.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
@@ -214,23 +220,41 @@ $conn->close();
                 </li>
                 <?php } ?>
 
-                <li>
+                <li class="sdbrLnks">
                     <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/14.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="login-profile.php"><img src="./plugins/images/icon/15.png" width="40px;" height="40px;" alt="up_profile_img"> Update Profile</a></li>
                         <li><a href = "change-password.php"><img src="./plugins/images/icon/36.png" width="35px;" height="35px;" alt="ch_pass_img"> Change Password</a></li>
                     </ul>
                 </li>
-                <li> <a href="news.php" class="waves-effect"><img src="./plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
 
-                <li> <a href="contact.php" class="waves-effect"><img src="./plugins/images/icon/1.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
+                <li class="sdbrLnks"> <a href="news.php" class="waves-effect"><img src="./plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
+
+                <li class="sdbrLnks"> <a href="contact.php" class="waves-effect"><img src="./plugins/images/icon/1.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
             </ul>
         </div>
     </div>
     <!-- Left navbar-header end -->
 
     <!-- preloader script -->
-    <script src="./admin/js/preloader.js"></script>
+    <script src="admin/js/preloader.js"></script>
+    <script type="text/javascript">
+        // Toggle the sublists
+document.querySelectorAll('.sdbrLnks > a').forEach(item => {
+    item.addEventListener('click', function() {
+        // First, remove the 'active' class from all other items
+        document.querySelectorAll('.sdbrLnks.active').forEach(activeItem => {
+            if (activeItem !== this.parentNode) {
+                activeItem.classList.remove('active');
+            }
+        });
+        
+        // Then, toggle the 'active' class on the currently clicked item
+        this.parentNode.classList.toggle('active');
+    });
+});
+
+    </script>
 
     </body>
 
