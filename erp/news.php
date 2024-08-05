@@ -124,9 +124,7 @@ include_once 'header.php'; ?>
 
         <!-- /.row -->
          <style>
-            #myTable {
-    width: 100%;
-}
+            
          </style>
         <div class="row">
             <div class="col-sm-12">
