@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Wait for 5 seconds after the page has loaded
         setTimeout(function() {
             document.getElementById("preloader").style.display = "none";
-        }, 5000); // 5000 milliseconds = 5 seconds
+        }, 3000); // 5000 milliseconds = 5 seconds
     });
 });
 
