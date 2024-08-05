@@ -98,10 +98,11 @@ $conn->close();
 
     }
     .navbar-header{
-        background-color: #ed5094 !important;
+        /* background-color: #ed5094 !important; */
+        background-color: #007bff !important;
     }
     .profile{
-        background-color: #ed5094 !important;
+        background-color: #007bff !important;
     }
 </style>
 
@@ -139,7 +140,7 @@ $conn->close();
     <!-- Left navbar-header -->
      <style>
         .sidebar{
-            background-color: #ed5094;
+            background-color: #007bff;
             /* background-color: #f97d4d; */
             color: #fff; 
             overflow: hidden;

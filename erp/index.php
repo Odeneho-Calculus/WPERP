@@ -158,7 +158,7 @@ include_once 'header.php'; ?>
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0));
+            /* background-image: linear-gradient(rgb(34, 200, 197), rgb(0, 0, 0)); */
             border-radius: 9px;
             color: white;
             padding: 16px;
@@ -173,7 +173,7 @@ include_once 'header.php'; ?>
         .card-body {
             padding: 20px;
             text-align: center;
-            color: #fff;
+            color: #333;
         }
 
         /* Card Icon */
@@ -193,27 +193,28 @@ include_once 'header.php'; ?>
         .card-title {
             font-size: 18px;
             font-weight: bold;
-            color: #fff;
+            color: #333;
         }
 
         .card-value {
             font-size: 28px;
             font-weight: bold;
-            color: #e0e0e0;
+            color: #222;
             text-decoration: none;
         }
 
         /* Specific Card Styles */
         .card-credit {
-            border-top: 4px solid #22C8C5; /* Teal top border */
+            /* border-top: 4px solid #22C8C5; Teal top border */
+            border-top: 4px solid #fff; /* Teal top border */
         }
 
         .card-campaign {
-            border-top: 4px solid #20B2AA; /* Light sea green top border */
+            border-top: 4px solid #fff; /* Light sea green top border */
         }
 
         .card-todays {
-            border-top: 4px solid #4682B4; /* Steel blue top border */
+            border-top: 4px solid #fff; /* Steel blue top border */
         }
 
         /* Responsive Adjustments */

@@ -99,7 +99,6 @@ include_once 'header.php'; ?>
             </div>
         <?php } ?>
         <!-- /.row -->
-
         <div class="row">
             <div class="col-sm-12">
 

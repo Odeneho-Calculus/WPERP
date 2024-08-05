@@ -15,7 +15,7 @@
 #preloader-spinner {
     border: 8px solid rgba(0, 0, 0, 0.1); 
     border-radius: 50%;
-    border-top: 8px solid #ed5094;
+    border-top: 8px solid #007bff;
     width: 60px;
     height: 60px;
     animation: spin 1.5s linear infinite; 

@@ -95,7 +95,7 @@ $conn->close();
 
     }
     .profile{
-        background-color: #ed5094 !important;
+        background-color: #007bff !important;
     }
 </style>
 
@@ -131,7 +131,7 @@ $conn->close();
     <!-- Left navbar-header -->
     <style>
         .sidebar {
-            background-color: #ed5094;
+            background-color: #343a40;
             color: #fff; 
             overflow: hidden;
             /* width: 22%; */
@@ -165,7 +165,7 @@ $conn->close();
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <br/>
-                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color:green "><?php echo $credit; ?></span></b></li>
+                <li>&emsp;<b>Total Credit :&nbsp;<span class="hide-menu" style="font-family:'Roboto', sans-serif;font-size:16px;color: green; "><?php echo $credit; ?></span></b></li>
 
                 <li class="sdbrLnks"> <a href="index.php" class="waves-effect"><img src="../plugins/images/icon/20.png" alt="dasboard_img"> <span class="hide-menu ml-2"> Dashboard</span></a> </li>
                
