@@ -191,7 +191,7 @@ $conn->close();
                 <li class="sdbrLnks"> <a href="sendwhatsapp.php" class="waves-effect"><img src="./plugins/images/icon/6.png" width="35px;" height="35px;" alt="wp_sms_img"> <span class="hide-menu ml-2"> Send Whatsapp SMS</span></a> </li>
 
                 <li class="sdbrLnks">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/16.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu">Whatsapp Report <span class="fa arrow"></span></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/16.png" width="40px;" height="40px;" alt="wp-report-img"> <span class="hide-menu ml-2">Whatsapp Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="deliveryapp.php"><img src="./plugins/images/icon/2.png" width="35px;" height="35px;" alt="cam_img"> Campaign Wise</a></li>
                     </ul>
@@ -199,7 +199,7 @@ $conn->close();
 
                 <li class="sdbrLnks">
                 <?php if($user_type == 'user') { ?>
-                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/24.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/24.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu ml-2">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="user-report.php"><img src="./plugins/images/icon/9.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
                     </ul>
@@ -208,12 +208,12 @@ $conn->close();
 
                 <?php if($user_type == 'reseller') { ?>
 
-                <li class="sdbrLnks"> <a href="reseller.php" class="waves-effect"><img src="./plugins/images/icon/10.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu"> Manage Reseller</span></a> </li>
+                <li class="sdbrLnks"> <a href="reseller.php" class="waves-effect"><img src="./plugins/images/icon/10.png" width="45px;" height="45px;" alt="reseller_img"> <span class="hide-menu ml-2"> Manage Reseller</span></a> </li>
 
-                <li class="sdbrLnks"> <a href="user.php" class="waves-effect"><img src="./plugins/images/icon/7.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu">Manage User</span></a> </li>
+                <li class="sdbrLnks"> <a href="user.php" class="waves-effect"><img src="./plugins/images/icon/7.png" width="40px;" height="40px;" alt="user_img"> <span class="hide-menu ml-2">Manage User</span></a> </li>
                 
                 <li class="sdbrLnks">
-                <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/4.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu">Credit Report <span class="fa arrow"></span></span></a>
+                <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/4.png" width="40px;" height="40px;" alt="credit_img"> <span class="hide-menu ml-2">Credit Report <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="user-report.php"><img src="./plugins/images/icon/9.png" width="30px;" height="30px;" alt="report_img_usr"> User Report</a></li>
                     </ul>
@@ -221,16 +221,16 @@ $conn->close();
                 <?php } ?>
 
                 <li class="sdbrLnks">
-                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/14.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><img src="./plugins/images/icon/14.png" width="40px;" height="40px;" alt="setting_img"> <span class="hide-menu ml-2">Settings <span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="login-profile.php"><img src="./plugins/images/icon/15.png" width="40px;" height="40px;" alt="up_profile_img"> Update Profile</a></li>
                         <li><a href = "change-password.php"><img src="./plugins/images/icon/36.png" width="35px;" height="35px;" alt="ch_pass_img"> Change Password</a></li>
                     </ul>
                 </li>
 
-                <li class="sdbrLnks"> <a href="news.php" class="waves-effect"><img src="./plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu">News</span></a> </li>
+                <li class="sdbrLnks"> <a href="news.php" class="waves-effect"><img src="./plugins/images/icon/30.png" width="30px;" height="30px;" alt="news_img"> <span class="hide-menu ml-2">News</span></a> </li>
 
-                <li class="sdbrLnks"> <a href="contact.php" class="waves-effect"><img src="./plugins/images/icon/1.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu"> Contact Us</span></a> </li>
+                <li class="sdbrLnks"> <a href="contact.php" class="waves-effect"><img src="./plugins/images/icon/1.png" width="30px;" height="30px;" alt="contact_img"> <span class="hide-menu ml-2"> Contact Us</span></a> </li>
             </ul>
         </div>
     </div>
